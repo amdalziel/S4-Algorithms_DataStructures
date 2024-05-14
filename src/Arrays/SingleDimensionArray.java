@@ -20,6 +20,8 @@ public class SingleDimensionArray {
             if(arr[location] == Integer.MIN_VALUE) {
                 arr[location] = valueToInsert;
                 System.out.println("Successfully inserted");
+            } else {
+                System.out.println("Location is not available.");
             }
 
         } catch(ArrayIndexOutOfBoundsException e) {
