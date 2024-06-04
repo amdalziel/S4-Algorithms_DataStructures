@@ -5,12 +5,12 @@ public class Main {
         SingleLinkedList singleLinkedList = new SingleLinkedList();
         singleLinkedList.insertInLinkedList(1, 0);
         singleLinkedList.insertInLinkedList(2, 1);
-        singleLinkedList.insertInLinkedList(3, 2);
-        singleLinkedList.insertInLinkedList(4, 3);
-        singleLinkedList.insertInLinkedList(100, 3);
+//        singleLinkedList.insertInLinkedList(3, 2);
+//        singleLinkedList.insertInLinkedList(4, 3);
+//        singleLinkedList.insertInLinkedList(100, 3);
         singleLinkedList.traverseLinkedList();
 
-        singleLinkedList.deleteFromLinkedList(2);
+        singleLinkedList.deleteFromLinkedList(0);
         singleLinkedList.traverseLinkedList();
 
     }

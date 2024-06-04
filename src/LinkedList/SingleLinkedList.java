@@ -97,6 +97,7 @@ public class SingleLinkedList {
             size --;
             if(size == 0) {
                 tail = null;
+                System.out.println("SLL is now empty.");
             }
         } else if (location == size - 1) {
             tail = null;
