@@ -18,7 +18,7 @@ public class SingleLinkedList {
 
     //insert into a linked list
     //0. If link list doesn't
-    //1. inserting at the begining
+    //1. inserting at the beginning
     //2. Inserting at the ending
     //3. Insert anywhere
     public void insertInLinkedList(int nodeValue, int location){
@@ -70,8 +70,8 @@ public class SingleLinkedList {
     public boolean searchNode (int nodeValue){
         if (head != null) {
             Node tempNode = head;
-            for (int i = 0; i < size; i++){
-                if (tempNode.value == nodeValue){
+            for (int i = 0; i < size; i++) {
+                if (tempNode.value == nodeValue) {
                     System.out.println("Found the node: " + tempNode.value + " at location: " + i + "\n");
                     return true;
                 }
