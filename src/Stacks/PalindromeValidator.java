@@ -2,12 +2,12 @@ package Stacks;
 
 import java.util.Stack;
 
-public class CheckForPalindrome {
+public class PalindromeValidator {
 
     private String word;
     private Stack<Character> lettersInStack = new Stack<>();
 
-    public CheckForPalindrome(String word) {
+    public PalindromeValidator(String word) {
         this.word = word;
 
         for (int i = 0; i < word.length(); i++) {
@@ -67,21 +67,15 @@ public class CheckForPalindrome {
 
     public static void main(String[] args) {
 
-        CheckForPalindrome word1 = new CheckForPalindrome("music");
-        CheckForPalindrome word2 = new CheckForPalindrome("amy");
-        CheckForPalindrome word3 = new CheckForPalindrome("radar");
-        CheckForPalindrome word4 = new CheckForPalindrome("racecar");
+        PalindromeValidator word1 = new PalindromeValidator("music");
+        PalindromeValidator word2 = new PalindromeValidator("amy");
+        PalindromeValidator word3 = new PalindromeValidator("radar");
+        PalindromeValidator word4 = new PalindromeValidator("racecar");
 
         word1.checkPalindrome();
         word2.checkPalindrome();
         word3.checkPalindrome();
         word4.checkPalindrome();
-
-
-
-
-
-
 
 
     }
