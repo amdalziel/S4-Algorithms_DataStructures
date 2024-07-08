@@ -4,21 +4,49 @@ import java.util.Stack;
 
 public class CheckForPalindrome {
 
-    private Stack<String> word;
+    private String word;
+    private Stack<Character> lettersInStack = new Stack<>();
 
-    public CheckForPalindrome(Stack<String> word) {
+    public CheckForPalindrome(String word) {
         this.word = word;
+
+        for (int i = 0; i < word.length(); i++) {
+            this.lettersInStack.push(word.charAt(i));
+        }
     }
 
 
-
-    public Stack<String> getWord() {
+    public String getWord() {
         return word;
     }
 
-    public void setWord(Stack<String> word) {
+    public void setWord(String word) {
         this.word = word;
     }
+
+    public Stack<Character> getLettersInStack() {
+        return lettersInStack;
+    }
+
+    public void setLettersInStack(Stack<Character> lettersInStack) {
+        this.lettersInStack = lettersInStack;
+    }
+
+    public Boolean checkPalindrome() {
+        int wordMidLength = findWordMidLength(this.word);
+
+        for (int i = 0; i < wordMidLength; i++) {
+            if (this.lettersInStack.get(i) != this.lettersInStack.getLast()) {
+                System.out.println(this.word + " is NOT a palindrome.");
+                return false;
+            } else {
+                lettersInStack.pop();
+            }
+        }
+        System.out.println(this.word + " IS a palindrome.");
+        return true;
+    }
+
 
 
     public int findWordMidLength(String word) {
@@ -39,10 +67,20 @@ public class CheckForPalindrome {
 
     public static void main(String[] args) {
 
-        Stack<String> racecar = new Stack<>();
-        racecar.push("racecar");
+        CheckForPalindrome word1 = new CheckForPalindrome("music");
+        CheckForPalindrome word2 = new CheckForPalindrome("amy");
+        CheckForPalindrome word3 = new CheckForPalindrome("radar");
+        CheckForPalindrome word4 = new CheckForPalindrome("racecar");
 
-        CheckForPalindrome word1 = new CheckForPalindrome(racecar);
+        word1.checkPalindrome();
+        word2.checkPalindrome();
+        word3.checkPalindrome();
+        word4.checkPalindrome();
+
+
+
+
+
 
 
 
