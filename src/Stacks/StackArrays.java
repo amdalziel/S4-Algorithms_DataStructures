@@ -12,10 +12,30 @@ public class StackArrays {
     }
 
 
-//    Homework:
-//    Pop method
-//    Peek method
-//    Use the stack data structure to check whether the word is a palindrome or not
+    public int[] getArr() {
+        return arr;
+    }
+
+    public void setArr(int[] arr) {
+        this.arr = arr;
+    }
+
+    public int getTopOfStack() {
+        return topOfStack;
+    }
+
+    public void setTopOfStack(int topOfStack) {
+        this.topOfStack = topOfStack;
+    }
+
+    public void printStack() {
+        for (int value : arr) {
+            System.out.println(value);
+        }
+    }
+
+
+
 //    Implement a stacked data structure with linked list instead of arrays.
 
 
@@ -30,6 +50,24 @@ public class StackArrays {
             System.out.println("Value is successfully inserted.");
         }
 
+    }
+
+
+//    Pop method
+    public void pop() {
+        if (isEmpty()) {
+
+        }
+    }
+
+
+//    Peek method
+    public void peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty.");
+        } else {
+            System.out.println(topOfStack);  // change!
+        }
     }
 
 
@@ -59,6 +97,17 @@ public class StackArrays {
 
     public static void main(String[] args) {
         StackArrays stackArrays = new StackArrays(3);
+        stackArrays.printStack();
+        System.out.println(stackArrays.getTopOfStack());
+
+        stackArrays.push(100);
+        stackArrays.printStack();
+        System.out.println(stackArrays.getTopOfStack());
+
+        stackArrays.push(200);
+        stackArrays.printStack();
+        System.out.println(stackArrays.getTopOfStack());
+
     }
 }
 
