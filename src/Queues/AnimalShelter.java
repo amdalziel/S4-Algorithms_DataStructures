@@ -35,7 +35,7 @@ public class AnimalShelter {
     public void printAllAnimalsInQueue() {
 
         if (animalQueue.isEmpty()) {
-            System.out.println("No animals in the queue.");
+            System.out.println("No animals are in the queue.");
         }
 
         for (Animal animal : animalQueue) {
@@ -76,6 +76,9 @@ public class AnimalShelter {
 
         try {
             Animal adoptedCat = catQueue.peek();
+            if (!checkIfQueueIsNull(adoptedCat, "cats")) {
+                return null;
+            }
             animalQueue.remove(adoptedCat);
             System.out.println(adoptedCat.getName() + " has been adopted.");
             return adoptedCat;
@@ -97,6 +100,9 @@ public class AnimalShelter {
 
         try {
             Animal adoptedDog = dogQueue.peek();
+            if (!checkIfQueueIsNull(adoptedDog, "dogs")) {
+                return null;
+            }
             animalQueue.remove(adoptedDog);
             System.out.println(adoptedDog.getName() + " has been adopted.");
             return adoptedDog;
@@ -110,6 +116,9 @@ public class AnimalShelter {
     public Animal adoptEitherPet() {
         try {
             Animal adoptedAnimal = animalQueue.peek();
+            if (!checkIfQueueIsNull(adoptedAnimal, "animals")) {
+                return null;
+            }
             animalQueue.remove();
             System.out.println(adoptedAnimal.getName() + " has been adopted.");
             return adoptedAnimal;
@@ -125,6 +134,15 @@ public class AnimalShelter {
     @Override
     public String toString() {
         return "Animal Shelter " + this.getId();
+    }
+
+
+    public Boolean checkIfQueueIsNull(Animal adoptedAnimal, String animalType) {
+        if (adoptedAnimal == null) {
+            System.out.println("Error - no " + animalType + " are in the shelter.");
+            return false;
+        }
+        return true;
     }
 
 

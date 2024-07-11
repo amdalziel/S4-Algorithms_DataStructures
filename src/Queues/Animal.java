@@ -43,7 +43,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Name: " + this.name + ", Animal Type: " + (this.getCat() ? "cat" : "dog") + ", Intake Date: " + this.intakeDate;
+        return "Name: " + this.name + ", Animal: " + (this.getCat() ? "Cat" : "Dog") + ", Intake Date: " + this.intakeDate;
     }
 
 }
