@@ -29,15 +29,11 @@ public class StackArrays {
     }
 
     public void printStack() {
-        for (int value : arr) {
-            System.out.println(value);
+        System.out.println("Stack values: ");
+        for (int i = 0; i <= topOfStack; i++) {
+            System.out.println(arr[i]);
         }
     }
-
-
-
-//    Implement a stacked data structure with linked list instead of arrays.
-
 
 
 //    Push method
@@ -45,18 +41,28 @@ public class StackArrays {
         if(isFull()) {
             System.out.println("Stack is full.");
         } else {
-            arr[topOfStack + 1] = value;
-            topOfStack++;
-            System.out.println("Value is successfully inserted.");
+            try {
+                arr[topOfStack + 1] = value;
+                topOfStack++;
+                System.out.println("Value is successfully inserted.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-
     }
 
 
 //    Pop method
     public void pop() {
         if (isEmpty()) {
-
+            System.out.println("Stack is empty.");
+        } else {
+            try {
+                System.out.println("Top of stack removed.");
+                topOfStack--;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -66,7 +72,24 @@ public class StackArrays {
         if (isEmpty()) {
             System.out.println("Stack is empty.");
         } else {
-            System.out.println(topOfStack);  // change!
+            try {
+                System.out.println("Top of stack: ");
+                System.out.println(arr[topOfStack]);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+//    Delete stack
+    public void deleteStack() {
+        try {
+            this.arr = null;
+            this.topOfStack = -1;
+            System.out.println("Entire stack set to NULL");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -74,22 +97,18 @@ public class StackArrays {
 //    IsEmpty method
     public Boolean isEmpty() {
         if (topOfStack == -1) {
-            System.out.println("Stack is empty.");
             return true;
             } else  {
-            System.out.println("Stack is not empty.");
             return false;
         }
     }
 
 
-//    isFull
+//    isFull method
     public Boolean isFull() {
         if (topOfStack == arr.length - 1) {
-            System.out.println("Stack is full.");
             return true;
         } else {
-            System.out.println("Stack is not full.");
             return false;
         }
     }
@@ -98,15 +117,20 @@ public class StackArrays {
     public static void main(String[] args) {
         StackArrays stackArrays = new StackArrays(3);
         stackArrays.printStack();
-        System.out.println(stackArrays.getTopOfStack());
 
-        stackArrays.push(100);
-        stackArrays.printStack();
-        System.out.println(stackArrays.getTopOfStack());
+        stackArrays.push(1);
+        stackArrays.push(2);
+        stackArrays.push(3);
 
-        stackArrays.push(200);
         stackArrays.printStack();
-        System.out.println(stackArrays.getTopOfStack());
+
+        stackArrays.peek();
+
+        stackArrays.pop();
+
+        stackArrays.peek();
+
+        stackArrays.deleteStack();
 
     }
 }
